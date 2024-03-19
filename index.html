@@ -3,15 +3,17 @@
   <title>Heirloom Cluster Map</title>
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-  <script src='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/Leaflet.fullscreen.min.js'></script>
-  <link href='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/leaflet.fullscreen.css' rel='stylesheet' />
+
 
   <!-- Leaflet.MarkerCluster -->
   <script src='https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.5.3/leaflet.markercluster.js'></script>
   <link href='https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.5.3/MarkerCluster.css' rel='stylesheet' />
   <link href='https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.5.3/MarkerCluster.Default.css' rel='stylesheet' />
   <style>
-    #map {position: absolute; top: 0; right: 0; bottom: 0; left: 0;}
+    #map {
+      height: 500px;
+      width: 100%;
+    }
   </style>
 </head>
 <body>
@@ -21,6 +23,8 @@
         zoomControl: false, // Disable the zoom control
         fullscreenControl:true
     }).setView([45.0572435554779, -92.82872200012207], 13); // Set a default view
+
+
 
 
     const tiles = L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
