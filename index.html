@@ -79,15 +79,16 @@
 
       for (let i = 0; i < jsonData.features.length; i++) {
         const feature = jsonData.features[i];
-        const title = feature.properties.property_name;
+        const title = feature.properties.Property_Name;
+        const url = feature.properties.Site_Address
+        const address = feature.properties.Address
         const marker = L.marker(new L.LatLng(feature.geometry.coordinates[1], feature.geometry.coordinates[0]), { title: title });
-        marker.bindPopup(`${title}`);
+        marker.bindPopup(`<b>${address}</b><br><br>${title}<br><br><a href="${url}" target="_blank">Webpage</a>`);
         markers.addLayer(marker);
       }
 
       map.addLayer(markers);
     })();
-
 	</script>
 </body>
 </html>
