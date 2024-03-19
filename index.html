@@ -21,17 +21,6 @@
         zoomControl: false, // Disable the zoom control
         fullscreenControl:true
     }).setView([45.0572435554779, -92.82872200012207], 13); // Set a default view
-    map.isFullscreen() // Is the map fullscreen?
-    map.toggleFullscreen() // Either go fullscreen, or cancel the existing fullscreen.
-
-    // `fullscreenchange` Event that's fired when entering or exiting fullscreen.
-    map.on('fullscreenchange', function () {
-        if (map.isFullscreen()) {
-            console.log('entered fullscreen');
-        } else {
-            console.log('exited fullscreen');
-        }
-});
 
 
     const tiles = L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
