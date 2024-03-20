@@ -5,10 +5,8 @@
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
   <script src="https://unpkg.com/esri-leaflet@3.0.10/dist/esri-leaflet.js"></script>
   <script src="https://unpkg.com/esri-leaflet-vector@4.2.3/dist/esri-leaflet-vector.js" crossorigin=""></script>
-  <script src='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/Leaflet.fullscreen.min.js'></script>
-  <link href='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/leaflet.fullscreen.css' rel='stylesheet' />
-  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/map-ir/Leaflet.GestureHandling/dist/leaflet-gesture-handling.min.css" type="text/css">
-  <script src="//cdn.jsdelivr.net/gh/map-ir/Leaflet.GestureHandling/dist/leaflet-gesture-handling.min.js"></script>
+
+  
 
   <!-- Leaflet.MarkerCluster -->
   <script src='https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.5.3/leaflet.markercluster.js'></script>
@@ -35,10 +33,6 @@
 	<script>
     const map = L.map('map', {
         zoomControl: false, // Disable the zoom control
-        fullscreenControl: {
-            pseudoFullscreen: false // if true, fullscreen to page width and height
-        },
-        gestureHandling: true
     }).setView([45.0572435554779, -92.82872200012207], 13); // Set a default view
 
 
