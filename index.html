@@ -55,7 +55,16 @@
             }
         }).addTo(map)}
             );
-
+  fetch("https://raw.githubusercontent.com/ColeBoelterGIS/heirloom-url-map/main/Stillwater.geojson")
+    .then(response => response.json())
+    .then(data => {
+      L.geoJSON(data, {
+        style: function (feature) {
+          return {color: "#000000", fillOpacity: 0};
+          
+        }
+      }).addTo(map)}
+         );
     // Add your ArcGIS hosted feature layer URL here
     const arcgisFeatureLayerURL = 'https://services3.arcgis.com/eUyz58xtA1naNJoX/arcgis/rest/services/Parcels/FeatureServer/0';
     const arcgisFeatureLayer = L.esri.featureLayer({
