@@ -32,12 +32,19 @@
  
 	<div id="map"></div>
 	<script>
-    const map = L.map('map', {
-        zoomControl: true,
-        gestureHandling: true // Enable gesture handling
-    }).setView([45.0572435554779, -92.82872200012207], 13); 
+     // Function to determine if gesture handling should be enabled based on the parent window's width
+    function shouldEnableGestureHandling() {
+      // Directly use the parent window's width
+      const windowWidth = window.parent.innerWidth;
+      return windowWidth < 768; // Example threshold for small devices
+    }
 
+    const mapOptions = {
+      zoomControl: true,
+      gestureHandling: shouldEnableGestureHandling() // Enable/disable gesture handling based on parent window size
+    };
 
+    const map = L.map('map', mapOptions).setView([45.0572435554779, -92.82872200012207], 13);
 
 
     const tiles = L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
